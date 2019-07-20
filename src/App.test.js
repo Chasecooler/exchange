@@ -7,3 +7,6 @@ it('renders without crashing', () => {
   ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
+
+// Notes:
+// mongodb+srv://<username>:<password>@clusterexchange-zr1h7.mongodb.net/test?retryWrites=true&w=majority
