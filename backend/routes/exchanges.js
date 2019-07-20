@@ -5,7 +5,7 @@ let Exchange = require("../models/exchange.model");
 router.route("/").get((req, res) => {
   Exchange.find()
 
-    .then(exhanges => res.json(exchanges))
+    .then(exchanges => res.json(exchanges))
 
     .catch(err => res.status(400).json("Error: " + err));
 });
@@ -32,7 +32,7 @@ router.route("/add").post((req, res) => {
   newExchange
     .save()
 
-    .then(() => res.json("Exercise added!"))
+    .then(() => res.json("Exchange added!"))
 
     .catch(err => res.status(400).json("Error: " + err));
 });
@@ -40,7 +40,7 @@ router.route("/add").post((req, res) => {
 router.route("/:id").get((req, res) => {
   Exchange.findById(req.params.id)
 
-    .then(exercise => res.json(exercise))
+    .then(exchange => res.json(exchange))
 
     .catch(err => res.status(400).json("Error: " + err));
 });
@@ -48,7 +48,7 @@ router.route("/:id").get((req, res) => {
 router.route("/:id").delete((req, res) => {
   Exchange.findByIdAndDelete(req.params.id)
 
-    .then(() => res.json("Exercise deleted."))
+    .then(() => res.json("Exchange deleted."))
 
     .catch(err => res.status(400).json("Error: " + err));
 });
