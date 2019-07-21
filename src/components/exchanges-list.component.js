@@ -20,6 +20,7 @@ const Exchange = props => (
   </tr>
 )
 
+//  Notes: ... TEST Alternative ... <Link to={"/edit/" + props.exchange._id}>edit</Link> | <a href="#" onClick={() => { props.deleteExchange(props.exchange._id) }}>delete</a>
 export default class ExchangesList extends Component {
   constructor(props) {
     super(props);
