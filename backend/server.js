@@ -5,11 +5,11 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 
 require("dotenv").config();
-
-const app = express();
 // express server
-const port = process.env.PORT || 5000;
+const app = express();
 
+const port = process.env.PORT || 5000;
+// cross-origin resources sharing ... allows restricted resources requested from another domain
 app.use(cors());
 
 app.use(express.json());
@@ -24,11 +24,11 @@ connection.once("open", () => {
   console.log("MongoDB database connection established successfully");
 });
 
-const exercisesRouter = require("./routes/exercises");
+const exchangesRouter = require("./routes/exchanges");
 
 const usersRouter = require("./routes/users");
 
-app.use("/exercises", exercisesRouter);
+app.use("/exchanges", exchangesRouter);
 
 app.use("/users", usersRouter);
 
